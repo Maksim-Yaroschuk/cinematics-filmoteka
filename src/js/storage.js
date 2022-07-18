@@ -40,21 +40,21 @@ export default {
 
 const btnWatched = document.querySelector('.btn--watched');
 const btnQueue = document.querySelector('.btn--queue');
-const btnAddWatched = document.querySelector('.modal__watched');
-const btnAddQueue = document.querySelector('.modal__queue');
+// const btnAddWatched = document.querySelector('.modal__watched');
+// const btnAddQueue = document.querySelector('.modal__queue');
 const poster = document.querySelector('.poster-list__item');
 
-console.log('btnWatched', btnWatched);
-console.log('btnQueue', btnQueue);
-console.log('btnAddWatched', btnAddWatched);
-console.log('btnAddQueue',  btnAddQueue);
+// console.log('btnWatched', btnWatched);
+// console.log('btnQueue', btnQueue);
+// console.log('btnAddWatched', btnAddWatched);
+// console.log('btnAddQueue',  btnAddQueue);
 console.log('poster', poster);
 
-btnWatched.addEventListener("click", filterWatched);
-btnQueue.addEventListener("click", filterQueue);
-btnAddWatched.addEventListener("click",funAddWatched );
-btnAddQueue.addEventListener("click", funAddQueue);
-poster.addEventListener("click", funAddQueue);
+// btnWatched.addEventListener("click", filterWatched);
+// btnQueue.addEventListener("click", filterQueue);
+// btnAddWatched.addEventListener("click",funAddWatched );
+// btnAddQueue.addEventListener("click", funAddQueue);
+// poster.addEventListener("click", funAddQueue);
 
 
 function funAddLib(val) {
