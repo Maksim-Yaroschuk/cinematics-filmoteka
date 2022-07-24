@@ -1,8 +1,8 @@
 {
-  "name": "parcel-project-template",
+  "name": "cinematics-filmoteka",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/cinematics-filmoteka",
+  "homepage": "https://maksim-yaroschuk.github.io/cinematics-filmoteka/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /cinematics-filmoteka/"
