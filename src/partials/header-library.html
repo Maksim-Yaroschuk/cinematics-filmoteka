@@ -16,7 +16,11 @@
           <ul class="header__list">
             <li class="header__item">
               <a class="header__link" href="./index.html" id="header-home"
-                >HOME</a
+                >
+                <svg class="header__nav_icon" width="10" height="10">
+                  <use href="./images/sprite/symbol-defs.svg#icon-home3"></use>
+                </svg>
+                HOME</a
               >
             </li>
             <li class="header__item">
@@ -24,7 +28,11 @@
                 class="header__link current-link"
                 href="./library.html"
                 id="header-myLibrary"
-                >MY LIBRARY</a
+                >
+                <svg class="header__nav_icon" width="10" height="10">
+                  <use href="./images/sprite/symbol-defs.svg#icon-video-camera"></use>
+                </svg>
+                MY LIBRARY</a
               >
             </li>
           </ul>
@@ -45,10 +53,10 @@
     </div>
     <div>
 			<!-- hidden -->
-		<button class="toggle-theme-btn" id="toggle-theme-btn"><span class="toggle-theme-text">CHANGE THEME</span>
+		<button id="toggle-theme-btn"><span class="text_theme-btn">CHANGE THEME</span>
 			<svg width="28px" height="28px">
-				<use class="moon toggle-theme-image" id="toggle-theme-image" href="./images/icons.svg#moon"></use>
-				<use class="sun toggle-theme-image" id="toggle-theme-image" href="./images/icons.svg#sun"></use>
+				<use class="moon" id="toggle-theme-image" href="./images/icons.svg#moon"></use>
+				<use class="sun" id="toggle-theme-image" href="./images/icons.svg#sun"></use>
 			</svg>
 			<span class="visually-hidden">theme</span>
 		</button>

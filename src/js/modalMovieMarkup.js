@@ -2,8 +2,9 @@ import { IMG_BASE_URL, IMG_W400 } from './api'
 import {loadLs} from './storage'
 
 //Функция конвертации id жанра в название жанра
-const genresList = loadLs('genresList')
+
 const genresConverting = (genresIds) => {
+  const genresList = loadLs('genresList')
   const genreArray = []
   genresIds.map(genreId => {
     genresList.map(genre => {
@@ -15,6 +16,8 @@ const genresConverting = (genresIds) => {
 
 //Функция создания разметки модального окна фильма
 const modalMoviemarkup = ({poster_path, popularity, vote_average, vote_count, original_title, genre_ids, overview}) => {
+let posterPath = ``
+if(poster_path){posterPath=`${IMG_BASE_URL}${IMG_W400}/${poster_path}`}else{posterPath='https://i.ibb.co/GPMFHG6/keep-calm-poster-not-found-1.png'}
 return `
 <button class="modal__btn-closs btn__closs-modal">
       <svg
@@ -31,7 +34,7 @@ return `
       </svg>
     </button>
 <div class="modal__movi-poster">
-<img src="${IMG_BASE_URL}${IMG_W400}/${poster_path}" alt="placeholder" />
+<img src="${posterPath}" alt="placeholder" />
 </div>
 
 <div class="modal_movi-info">

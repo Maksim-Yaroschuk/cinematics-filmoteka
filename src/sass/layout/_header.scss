@@ -1,23 +1,23 @@
-.header {
-  padding-top: 1px;
-}
+// .header {
+//   padding-top: 1px;
+// }
 
 .header__seaction_home {
   background-color: #000000;
-  //background-image: url(/src/images/header/abstract-background-with-red-lines-mobile.jpg);
-  background-image: url(/src/images/header/photo_2022-07-20_17-13-30-mobile.jpg);
-  //background-image: url(/src/images/header/photo_2022-07-20_19-17-08-mob.jpg);
+  //background-image: url(/src/images/abstract-background-with-red-lines-mobile.jpg);
+  background-image: url(/src/images/photo_2022-07-20_17-13-30-mobile.jpg);
+  //background-image: url(/src/images/photo_2022-07-20_19-17-08-mob.jpg);
   @include mq(tablet) {
-    // background-image: url(/src/images/header/abstract-background-with-red-lines-tablet.jpg);
-    background-image: url(/src/images/header/photo_2022-07-20_17-13-30-tablet.jpg);
-    //background-image: url(/src/images/header/photo_2022-07-20_19-17-08-tab.jpg);
+    // background-image: url(/src/images/abstract-background-with-red-lines-tablet.jpg);
+    background-image: url(/src/images/photo_2022-07-20_17-13-30-tablet.jpg);
+    //background-image: url(/src/images/photo_2022-07-20_19-17-08-tab.jpg);
     margin-left: 21px;
     margin-right: 15px;
   }
   @include mq(desktop) {
-    //background-image: url(/src/images/header/abstract-background-with-red-lines-desktop.jpg);
-    background-image: url(/src/images/header/photo_2022-07-20_17-13-30-desktop.jpg);
-    //background-image: url(/src/images/header/photo_2022-07-20_19-17-08-desk.jpg);
+    //background-image: url(/src/images/abstract-background-with-red-lines-desktop.jpg);
+    background-image: url(/src/images/photo_2022-07-20_17-13-30-desktop.jpg);
+    //background-image: url(/src/images/photo_2022-07-20_19-17-08-desk.jpg);
     padding-bottom: 80px;
     margin-right: auto;
   margin-left: auto;
@@ -28,26 +28,29 @@
   max-width: 1280px;
   margin-right: 10px;
   margin-left: 10px;
-  padding-top: 40px;
+  padding-top: 30px;
   //padding-bottom: 92px; //
   padding-bottom: 112px;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 0 0 15px 15px;
 }
 .header__seaction_library {
   background-color: #000000;
-  background-image: url(/src/images/header/abstract-background-with-red-lines-library-desktop.jpg);
+  background-image: url(/src/images/abstract-background-with-red-lines-library-desktop.jpg);
   @include mq(tablet) {
-    background-image: url(/src/images/header/abstract-background-with-red-lines-library-tablet.jpg);
+    background-image: url(/src/images/abstract-background-with-red-lines-library-tablet.jpg);
+    max-height: 236px;
   }
   @include mq(desktop) {
-    background-image: url(/src/images/header/abstract-background-with-red-lines-library-desktop.jpg);
+    background-image: url(/src/images/abstract-background-with-red-lines-library-desktop.jpg);
+    max-height: 204px;
     padding-bottom: 80px;
   }
   background-repeat: no-repeat;
   background-size: cover;
   flex-grow: 1;
   max-width: 1280px;
+  max-height: 249px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 40px;
@@ -88,7 +91,11 @@
 }
 .header__icon_logo {
   animation: animate360 3000ms cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-  
+  stroke: var(--just-white);
+}
+
+.header__nav {
+	padding-top: 5px;
 }
 
 .header__name {
@@ -107,15 +114,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 60px;
-  // @include mq(tablet) {
-  //   margin-right:40px;
-  // }
+  margin-right: 10px;
+    @include mq(tablet) {
+      margin-right: 30px;
+    }
 }
 .header__item {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:not(:first-child) {
-    margin-left: 40px;
+  &:nth-child(-n + 3) {
+      margin-right: 20px;
+    }
+  @include mq(tablet) {
+    &:nth-child(-n + 3) {
+      margin-right: 40px;
+    }
   }
   &:focus,
   &:hover {
@@ -123,11 +135,19 @@
   }
 }
 .header__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: calc(14 / 12);
+  font-size: 11px;
+  line-height: calc(12 / 9);
+  @include mq(tablet) {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+  }
   padding-bottom: 5px;
   cursor: pointer;
   color: var(--just-white);
@@ -149,25 +169,34 @@
     bottom: 0;
   }
 }
+.header__nav_icon {
+  fill: currentColor;
+  margin-right: 5px;
+  padding-bottom: 0.5px;
+}
 .header__search-form {
   position: relative;
   display: inline-flex;
   justify-content: center;
-  padding-top: 54px;
+  padding-top: 30px;
+	padding-bottom: 40px;
   @include mq(tablet) {
-	//padding-top: 40px;
-   padding-top: 30px;
+  padding-top: 30px;
+	padding-bottom: 0px;
   }
+	@include mq(desktop) {
+		padding-bottom: 0px;
+	}
 }
 .header__input {
-  width: 280px;
+  width: 250px;
   @include mq(tablet) {
     width: 336px;
   }
   @include mq(desktop) {
     width: 394px;
   }
-  margin-left: -15px;
+  // margin-left: -15px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -190,10 +219,22 @@
 .header__search-button {
   position: absolute;
   right: -2px;
-  bottom: 2px;
+  bottom: 40px;
   cursor: pointer;
   background-color: transparent;
   border: none;
+	@include mq(tablet) {
+		bottom: 0px;
+	}
+}
+.header__search-icon {
+  fill: transparent;
+  stroke: var(--just-white);
+  stroke-width: 4px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+      transform: scale(1.2) rotate(40deg);
+    }
 }
 /*.header-message {
   position: absolute;
@@ -268,14 +309,17 @@
 .filter_form {
   position: absolute;
   font-size: 13px;
-  right: 0%;
-  bottom: -65%;
+  right: 70px;
+  bottom: -80%;
+	display: flex;
+	flex-direction: column;
   @include mq(tablet) {
-    right: 14.5%;
+    right: 167px;
     bottom: -50%;
+		display: block;
   }
   @include mq(desktop) {
-    right: 28.5%;
+    right: 439px;
     bottom: -50%;
   }
 }
@@ -283,7 +327,6 @@
   @include mq(mobile-only) {
     &:last-child {
       margin-top: 10px;
-      margin-right: 10px;
     }
   }
   border: 0px;
@@ -298,15 +341,17 @@
   background-color: #272e34;
 }
 .filter_form__select:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 3px;
+	margin-bottom: 8px;
+	@include mq(tablet) {
+		margin-bottom: 0px;
+	}
 }
-
 .btn-orange {
   background-color: var(--secondary-text-color);
 }
-
 .btnResetFilter {
-  margin-left: 40px;
+  // margin-left: 40px;
   border: 0px;
   border-bottom: 1px solid var(--just-white);
   color: var(--just-white);
@@ -314,8 +359,5 @@
   outline: none;
   background-color: inherit;
   padding: 2px;
-}
-
-.btnResetFilter:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
